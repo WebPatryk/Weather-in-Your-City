@@ -14,11 +14,17 @@
     letter-spacing: 1px;
     font-family:sans-serif;
     padding-top: 3rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     
     }
     
     /* Weater  */
+    .weather{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
     .weather_container{
         display: flex;
         justify-content: space-around;
@@ -26,10 +32,17 @@
     }
     .temp{
         display: flex;
-    
+        align-items: center;
     }
     .temp h1{
         font-size: 4rem;
+    }
+    .temp_info{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100px;
+        
     }
     img{
     
@@ -42,28 +55,67 @@
         font-size: 2.3rem;
         margin-top: -2rem;;
     }
-    
+    .city-container{
+        text-align: center;
+    }
     
     .city{
-        margin-top: 5rem;
+        margin-top: 3rem;
         align-self: flex-end;
         font-size: 2rem;
     }
+    .time{
+      
+       
+        font-weight: bold;
+        text-align: center;
+ 
+    }
+    .span-city{
+        display: inline-block;
+        margin: 3rem auto 0 auto;
+       font-size: 3rem;
+       font-weight: 600;
+       font-style: normal;
+    height: 50px;
+
+    }
+    .write-city{
+        cursor: pointer;
+       transition: .3s;
+       font-style: oblique;
+    }
+    .write-city:hover{
+        transform:translateX(10px);
+        display: inline-block;
+        box-shadow: 0 0 1rem rgba(0,0,0,.4);
+    }
     .weather-info{
         display: flex;
-        
+      
     }
     
     .weather-1, .weather-2{
         padding: 20px;
         border-right: 2px solid #fff;
         text-align: center;
+       
+       
     }
     .weather-3{
     padding: 20px;
     text-align: center;
-    }
     
+    }
+    .date{
+        font-size: 1.5rem;
+    }
+    .date-container{
+       margin-right: 60px;
+        font-size: 2rem;
+        display: grid;
+        grid-gap:5px;
+    }
     /* Next Day */
     
     
@@ -113,4 +165,9 @@
     canvas{
         display: block;
         margin-left: 4.2rem;
+    }
+    i{
+        font-size: 2rem;
+        padding-bottom: 1rem;
+       color: #eee;
     }

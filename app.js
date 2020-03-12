@@ -10,6 +10,7 @@ window.addEventListener('load', function () {
     const exactDateDOM = document.querySelector('.exact-date')
 
 
+
     const day1 = document.querySelector('.day-1');
     const day2 = document.querySelector('.day-2');
     const day3 = document.querySelector('.day-3');
@@ -170,17 +171,49 @@ function changeBackground() {
     const hours = date.getHours();
 
     console.log(hours);
-    if (hours <= 11) {
+    if (hours >= 6 || hours <= 11) {
         app.style.backgroundImage = `url('morning.jpg')`
     }
-    else if (hours < 12 || hours <= 17) {
+    if (hours >= 12 || hours <= 17) {
         app.style.backgroundImage = `url('in_the_afternoon.jpg')`
     }
-    else if (hours < 18 || hours <= 20) {
+    if (hours >= 18 || hours <= 20) {
         app.style.backgroundImage = `url('dusk.jpg')`
     }
-    else if (hours < 21 || hours < 11) {
+    if (hours >= 21 || hours <= 5) {
         app.style.backgroundImage = `url('night.jpg')`
     }
 }
+
+const writeCity = document.querySelector('.write-city');
+
+function getCity() {
+
+
+    if (localStorage.getItem('city') === null) {
+        writeCity.textContent = '[Enter City]'
+    }
+    else {
+        writeCity.textContent = localStorage.getItem('city')
+    }
+}
+
+function setCity(e) {
+    if (e.type === 'keypress') {
+        if (e.which == 13 || e.keyCode == 13) {
+            localStorage.setItem('city', e.target.innerText);
+            writeCity.blur();
+        }
+    }
+    else {
+        localStorage.setItem('city', e.target.innerText)
+    }
+}
+
+
+
+writeCity.addEventListener('keypress', setCity)
+
+
+getCity()
 changeBackground()

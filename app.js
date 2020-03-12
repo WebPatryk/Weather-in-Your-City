@@ -7,6 +7,8 @@ window.addEventListener('load', function () {
     const humidityDOM = document.querySelector('.humidity');
     const apparentTemperatureDOM = document.querySelector('.apparentTemperature');
     const windSpeedDOM = document.querySelector('.wind-speed');
+    const exactDateDOM = document.querySelector('.exact-date')
+
 
     const day1 = document.querySelector('.day-1');
     const day2 = document.querySelector('.day-2');
@@ -56,7 +58,7 @@ window.addEventListener('load', function () {
                 temperatureDOM.textContent = Math.floor((temperature - 32) / 1.8) + '°C';
                 temp_info.textContent = summary;
                 cityDOM.textContent = data.timezone;
-                humidityDOM.textContent = (humidity * 100) + '%';
+                humidityDOM.textContent = (humidity * 100).toFixed(0) + '%';
                 apparentTemperatureDOM.textContent = Math.floor((apparentTemperature - 32) / 1.8) + '°C';
 
 
@@ -85,14 +87,25 @@ window.addEventListener('load', function () {
                 var day_arr = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
 
 
-                day1.textContent = day_arr[actual1.getDay() - 1];
-                day2.textContent = day_arr[actual2.getDay() - 1];
-                day3.textContent = day_arr[actual3.getDay() - 1];
-                day4.textContent = day_arr[actual4.getDay() - 1];
+                day1.textContent = day_arr[actual1.getDay()];
+                day2.textContent = day_arr[actual2.getDay()];
+                day3.textContent = day_arr[actual3.getDay()];
+                day4.textContent = day_arr[actual4.getDay()];
 
 
-
+                //main icon
                 setIcons(icon, document.querySelector('.icon'))
+
+                //next day icon 
+
+                setIcons(data.daily.data[0].icon, document.querySelector('.day1-icon'))
+
+                setIcons(data.daily.data[1].icon, document.querySelector('.day2-icon'))
+
+                setIcons(data.daily.data[2].icon, document.querySelector('.day3-icon'))
+
+                setIcons(data.daily.data[3].icon, document.querySelector('.day4-icon'))
+
             }
 
 
@@ -109,6 +122,16 @@ window.addEventListener('load', function () {
         return skycons.set(iconID, Skycons[currentIcon])
     }
 
+    function addZero(a) {
+        if (a < 10) {
+            return `0${a}`
+        }
+        else {
+            return a;
+        }
+
+    }
+
 
     function time() {
         const date = new Date();
@@ -116,15 +139,6 @@ window.addEventListener('load', function () {
         const minutes = date.getMinutes();
         const seconds = date.getSeconds();
 
-        function addZero(a) {
-            if (a < 10) {
-                return `0${a}`
-            }
-            else {
-                return a;
-            }
-
-        }
 
 
         const time = document.querySelector('.time');
@@ -133,5 +147,40 @@ window.addEventListener('load', function () {
 
     setInterval(time, 1000)
 
+
+    function exactDate() {
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+
+        exactDateDOM.innerHTML = `${addZero(day)}.${addZero(month)}.${addZero(year)}r.`;
+    }
+
+    exactDate()
+
+
 })
 
+
+
+function changeBackground() {
+    const app = document.querySelector('.App');
+    const date = new Date();
+    const hours = date.getHours();
+
+    console.log(hours);
+    if (hours <= 11) {
+        app.style.backgroundImage = `url('morning.jpg')`
+    }
+    else if (hours < 12 || hours <= 17) {
+        app.style.backgroundImage = `url('in_the_afternoon.jpg')`
+    }
+    else if (hours < 18 || hours <= 20) {
+        app.style.backgroundImage = `url('dusk.jpg')`
+    }
+    else if (hours < 21 || hours < 11) {
+        app.style.backgroundImage = `url('night.jpg')`
+    }
+}
+changeBackground()

@@ -107,7 +107,7 @@
     text-align: center;
     
     }
-    .date{
+    .exact-date{
         font-size: 1.5rem;
     }
     .date-container{
@@ -125,10 +125,11 @@
         width: 100%;
         grid-template-columns: repeat(2,1fr);
         grid-gap: 50px;
-        /* justify-content: center; */
-     
+        justify-content: center;
+       
     
     }
+   
     .nextDay1, .nextDay2, .nextDay3, .nextDay4{
         background-color: rgba(37, 36, 36, 0.479);
         width: 600px;
@@ -137,7 +138,58 @@
         box-shadow: 0 0 2px rgba(0,0,0, .2);
         display: flex;
         padding: 0 10px;
-        
+        position: relative;
+    }
+    .nextDay1 i:first-child{
+        position: absolute;
+        top: -45px;
+        right: 115px;
+     
+    }
+    .nextDay1 i:nth-child(2){
+        position: absolute;
+        top: -45px;
+        right: 30px;
+     
+    }
+
+    .nextDay2 i:first-child{
+        position: absolute;
+        top: -45px;
+        right: 115px;
+     
+    }
+    .nextDay2 i:nth-child(2){
+        position: absolute;
+        top: -45px;
+        right: 30px;
+     
+    }
+
+    .nextDay3 i:first-child{
+        position: absolute;
+        top: -45px;
+        right: 115px;
+     
+    }
+    .nextDay3 i:nth-child(2){
+        position: absolute;
+        top: -45px;
+        right: 30px;
+     
+    }
+
+    .nextDay4 i:first-child{
+        position: absolute;
+        top: -45px;
+        right: 115px;
+     
+    }
+    .nextDay4 i:nth-child(2){
+        position: absolute;
+        top: -45px;
+        right: 30px;
+     
     }
     .nextDay p{
         opacity: 1;;
@@ -170,4 +222,8 @@
         font-size: 2rem;
         padding-bottom: 1rem;
        color: #eee;
+    }
+    .day1-icon, .day2-icon, .day3-icon, .day4-icon{
+        padding-top:20px;
+        margin: auto 20px auto auto;
     }

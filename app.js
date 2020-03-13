@@ -171,16 +171,16 @@ function changeBackground() {
     const hours = date.getHours();
 
     console.log(hours);
-    if (hours >= 6 || hours <= 11) {
+    if (hours >= 6 && hours <= 11) {
         app.style.backgroundImage = `url('morning.jpg')`
     }
-    if (hours >= 12 || hours <= 17) {
+    else if (hours >= 12 && hours <= 17) {
         app.style.backgroundImage = `url('in_the_afternoon.jpg')`
     }
-    if (hours >= 18 || hours <= 20) {
+    else if (hours >= 18 && hours <= 20) {
         app.style.backgroundImage = `url('dusk.jpg')`
     }
-    if (hours >= 21 || hours <= 5) {
+    else if (hours >= 21 && hours <= 5) {
         app.style.backgroundImage = `url('night.jpg')`
     }
 }

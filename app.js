@@ -170,19 +170,41 @@ function changeBackground() {
     const date = new Date();
     const hours = date.getHours();
 
-    console.log(hours);
-    if (hours >= 6 && hours <= 11) {
-        app.style.backgroundImage = `url('morning.jpg')`
+    switch (hours) {
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+            app.style.backgroundImage = `url('morning.jpg')`
+            break;
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            app.style.backgroundImage = `url('in_the_afternoon.jpg')`
+            break;
+        case 19:
+        case 20:
+        case 21:
+            app.style.backgroundImage = `url('dusk.jpg')`
+            break;
+        case 22:
+        case 23:
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            app.style.backgroundImage = `url('night.jpg')`
+            break;
     }
-    else if (hours >= 12 && hours <= 17) {
-        app.style.backgroundImage = `url('in_the_afternoon.jpg')`
-    }
-    else if (hours >= 18 && hours <= 20) {
-        app.style.backgroundImage = `url('dusk.jpg')`
-    }
-    else if (hours >= 21 && hours <= 5) {
-        app.style.backgroundImage = `url('night.jpg')`
-    }
+
 }
 
 const writeCity = document.querySelector('.write-city');

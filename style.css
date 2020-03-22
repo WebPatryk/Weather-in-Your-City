@@ -368,6 +368,7 @@
         }
         .day1-icon, .day2-icon, .day3-icon, .day4-icon{
             width: 2rem;
+           margin-bottom: 20px;
         }
         .next_temp p{
             font-size: .6rem;

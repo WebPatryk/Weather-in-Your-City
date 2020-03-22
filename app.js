@@ -28,6 +28,9 @@ window.addEventListener('load', function () {
     const tempMax4 = document.querySelector('.temp-max-4');
     const tempMin4 = document.querySelector('.temp-min-4');
 
+
+    Swal.fire('Please allow the rights to use your navigation')
+
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;

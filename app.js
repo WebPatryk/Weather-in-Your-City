@@ -19,14 +19,14 @@ window.addEventListener('load', function () {
     const tempMax1 = document.querySelector('.temp-max-1');
     const tempMin1 = document.querySelector('.temp-min-1');
 
-    const tempMax2 = document.querySelector('.temp-max-1');
-    const tempMin2 = document.querySelector('.temp-min-1');
+    const tempMax2 = document.querySelector('.temp-max-2');
+    const tempMin2 = document.querySelector('.temp-min-2');
 
-    const tempMax3 = document.querySelector('.temp-max-1');
-    const tempMin3 = document.querySelector('.temp-min-1');
+    const tempMax3 = document.querySelector('.temp-max-3');
+    const tempMin3 = document.querySelector('.temp-min-3');
 
-    const tempMax4 = document.querySelector('.temp-max-1');
-    const tempMin4 = document.querySelector('.temp-min-1');
+    const tempMax4 = document.querySelector('.temp-max-4');
+    const tempMin4 = document.querySelector('.temp-min-4');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {

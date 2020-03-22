@@ -227,3 +227,186 @@
         padding-top:20px;
         margin: auto 20px auto auto;
     }
+
+
+
+    @media  screen and (max-width: 1500px) {
+        .App{
+            padding-bottom: 2rem;
+            height: auto;
+        }
+        .temp h1{
+            font-size: 2.5rem;
+        }
+        .temp canvas{
+            font-size: .2rem;
+        }
+        .nextDay{
+            grid-template-columns: repeat(2,1fr);
+            
+        }
+        .nextDay1, .nextDay2, .nextDay3, .nextDay4{
+            width: 32rem;
+        }
+      }
+
+      @media  screen and (max-width: 1200px) {
+
+      .weather_container{
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+      .weather-info{
+          padding: 20px;
+      }
+      .city{
+        margin:0;
+        align-self:center;
+      }
+
+      .city-container{
+          margin: 0;
+          display: block;
+          width:100%;
+          padding: 30px;
+      }
+        .nextDay{
+            margin-top: 5rem;
+            grid-template-columns: repeat(1,1fr);
+         
+        }
+        .nextDay1, .nextDay2, .nextDay3, .nextDay4{
+            width: 35rem;
+        }
+        .span-city{
+            margin: 0;
+        }
+        .App{
+            padding-bottom: 2rem;
+            height: auto;
+        }
+        .weather{
+            order: 1;
+        }
+        .weather-city{
+         order: 2;
+        }
+        .weather-info{
+            order: 3;
+        }
+      }
+      
+      @media screen and (max-width:600px){
+        .App{
+            padding-bottom: 2rem;
+            height: auto;
+        }
+        .nextDay1, .nextDay2, .nextDay3, .nextDay4{
+            width: 23rem;
+
+        }
+        .nextDay1 i, .nextDay2 i, .nextDay3 i, .nextDay4 i{
+            font-size: 1.4rem;
+        }
+        .city-container .span-city{
+            font-size: 2rem;
+        }
+        .city-container .write-city{
+            font-size: 1.7rem;
+        }
+       .weather-info{
+           display: block;
+       }
+       .weather{
+           order: 1;
+       }
+       .weather-city{
+        order: 2;
+       }
+       .weather-info{
+           order: 3;
+           
+       }
+       .weather-1, .weather-2, .weather-3{
+           border: none;
+           display: inline-block;
+       }
+       .date-container, .exact-date{
+           margin: 0 0 1rem 0;
+           text-align: center;
+       }
+       .day1-icon, .day2-icon, .day3-icon, .day4-icon{
+           width: 3rem;
+       }
+       .nextDay1 p, .nextDay2 p, .nextDay3 p, .nextDay4 p{
+           font-size: 1.3rem;
+       }
+     
+       .cityDOM{
+           font-size: 2.1rem;
+           text-align: center;
+       }
+       .temp canvas{
+           width: 5rem;
+           margin-bottom: 1rem;
+       }
+     
+      }
+
+
+      @media screen and (max-width:400px){
+          .App{
+              padding-bottom: 2rem;
+              height: auto;
+          }
+        .nextDay1, .nextDay2 , .nextDay3 , .nextDay4 {
+            width: 15rem;
+        }
+        .nextDay1 p, .nextDay2 p, .nextDay3 p, .nextDay4 p{
+            font-size: .6rem;
+        }
+        .day1-icon, .day2-icon, .day3-icon, .day4-icon{
+            width: 2rem;
+        }
+        .next_temp p{
+            font-size: .6rem;
+            margin-right: 1rem;
+        }
+        .nextDay1 i, .nextDay2 i, .nextDay3 i, .nextDay4 i{
+            font-size: .6rem;
+        }
+        .nextDay1 i:first-child{
+            top: -20px;
+            right: 65px;
+        }
+        .nextDay1 i:nth-child(2){
+            top: -20px;
+        }
+    
+        .nextDay2 i:first-child{
+             top: -20px;
+             right: 65px;
+        }
+        .nextDay2 i:nth-child(2){
+            top: -20px;
+        }
+    
+        .nextDay3 i:first-child{
+            top: -20px;
+            right: 65px;
+        }
+        .nextDay3 i:nth-child(2){
+            top: -20px;
+        }
+    
+        .nextDay4 i:first-child{
+            top: -20px;
+            right: 65px;
+        }
+        .nextDay4 i:nth-child(2){
+            top: -20px;
+
+        }
+        
+       }

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 .App {
-    background-image: url('day.jpeg'), linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -14,7 +13,6 @@
     letter-spacing: 1px;
     font-family:sans-serif;
     padding-top: 3rem;
-    /* overflow: hidden; */
     
     }
     

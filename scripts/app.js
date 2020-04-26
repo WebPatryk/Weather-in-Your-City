@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
     const humidityDOM = document.querySelector('.humidity');
     const apparentTemperatureDOM = document.querySelector('.apparentTemperature');
     const windSpeedDOM = document.querySelector('.wind-speed');
-    const exactDateDOM = document.querySelector('.exact-date')
+    const exactDateDOM = document.querySelector('.exact-date');
 
 
 
@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
     const tempMin4 = document.querySelector('.temp-min-4');
 
 
-    Swal.fire('Please allow the rights to use your navigation')
+    Swal.fire('Please allow the rights to use your navigation');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -41,20 +41,13 @@ window.addEventListener('load', function () {
 
             const API = `${proxy}https://api.darksky.net/forecast/${KEY}/${lat},${long}`;
 
-
-            // fetch(API)
-            //     .then(res => res.json())
-            //     .then(data => console.log(data))
-
             const getWeather = async () => {
                 const response = await fetch(API);
-                const data = await response.json()
-                console.log(data);
+                const data = await response.json();
 
                 //Destructurisation
                 const { temperature, summary, icon, pressure, humidity, apparentTemperature, windSpeed } = data.currently;
 
-                // const { temperatureHigh, temperatureLow } = data.daily.data;
 
 
                 // Set DOM
@@ -83,10 +76,10 @@ window.addEventListener('load', function () {
                 tempMin4.textContent = Math.floor((data.daily.data[3].temperatureLow - 32) / 1.8) + '°C';
 
 
-                const actual1 = new Date(data.daily.data[0].time * 1000)
-                const actual2 = new Date(data.daily.data[1].time * 1000)
-                const actual3 = new Date(data.daily.data[2].time * 1000)
-                const actual4 = new Date(data.daily.data[3].time * 1000)
+                const actual1 = new Date(data.daily.data[0].time * 1000);
+                const actual2 = new Date(data.daily.data[1].time * 1000);
+                const actual3 = new Date(data.daily.data[2].time * 1000);
+                const actual4 = new Date(data.daily.data[3].time * 1000);
 
                 var day_arr = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
 
@@ -98,24 +91,24 @@ window.addEventListener('load', function () {
 
 
                 //main icon
-                setIcons(icon, document.querySelector('.icon'))
+                setIcons(icon, document.querySelector('.icon'));
 
                 //next day icon 
 
-                setIcons(data.daily.data[0].icon, document.querySelector('.day1-icon'))
+                setIcons(data.daily.data[0].icon, document.querySelector('.day1-icon'));
 
-                setIcons(data.daily.data[1].icon, document.querySelector('.day2-icon'))
+                setIcons(data.daily.data[1].icon, document.querySelector('.day2-icon'));
 
-                setIcons(data.daily.data[2].icon, document.querySelector('.day3-icon'))
+                setIcons(data.daily.data[2].icon, document.querySelector('.day3-icon'));
 
-                setIcons(data.daily.data[3].icon, document.querySelector('.day4-icon'))
+                setIcons(data.daily.data[3].icon, document.querySelector('.day4-icon'));
 
-            }
+            };
 
 
-            getWeather()
+            getWeather();
 
-        })
+        });
 
     }
 
@@ -123,12 +116,12 @@ window.addEventListener('load', function () {
         const skycons = new Skycons({ color: "white" });
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
-        return skycons.set(iconID, Skycons[currentIcon])
+        return skycons.set(iconID, Skycons[currentIcon]);
     }
 
     function addZero(a) {
         if (a < 10) {
-            return `0${a}`
+            return `0${a}`;
         }
         else {
             return a;
@@ -149,7 +142,7 @@ window.addEventListener('load', function () {
         time.innerHTML = `${addZero(hours)}: ${addZero(minutes)}: ${addZero(seconds)}`;
     }
 
-    setInterval(time, 1000)
+    setInterval(time, 1000);
 
 
     function exactDate() {
@@ -161,10 +154,10 @@ window.addEventListener('load', function () {
         exactDateDOM.innerHTML = `${addZero(day)}.${addZero(month)}.${addZero(year)}r.`;
     }
 
-    exactDate()
+    exactDate();
 
 
-})
+});
 
 
 
@@ -180,7 +173,7 @@ function changeBackground() {
         case 9:
         case 10:
         case 11:
-            app.style.backgroundImage = `url('morning.jpg')`
+            app.style.backgroundImage = `url('./image/morning.jpg')`;
             break;
         case 12:
         case 13:
@@ -189,12 +182,12 @@ function changeBackground() {
         case 16:
         case 17:
         case 18:
-            app.style.backgroundImage = `url('in_the_afternoon.jpg')`
+            app.style.backgroundImage = `url('./image/in_the_afternoon.jpg')`;
             break;
         case 19:
         case 20:
         case 21:
-            app.style.backgroundImage = `url('dusk.jpg')`
+            app.style.backgroundImage = `url('./image/dusk.jpg')`;
             break;
         case 22:
         case 23:
@@ -204,7 +197,7 @@ function changeBackground() {
         case 3:
         case 4:
         case 5:
-            app.style.backgroundImage = `url('night.jpg')`
+            app.style.backgroundImage = `url('./image/night.jpg')`;
             break;
     }
 
@@ -216,10 +209,10 @@ function getCity() {
 
 
     if (localStorage.getItem('city') === null) {
-        writeCity.textContent = '[Enter City]'
+        writeCity.textContent = '[Enter City]';
     }
     else {
-        writeCity.textContent = localStorage.getItem('city')
+        writeCity.textContent = localStorage.getItem('city');
     }
 }
 
@@ -231,14 +224,14 @@ function setCity(e) {
         }
     }
     else {
-        localStorage.setItem('city', e.target.innerText)
+        localStorage.setItem('city', e.target.innerText);
     }
 }
 
 
 
-writeCity.addEventListener('keypress', setCity)
+writeCity.addEventListener('keypress', setCity);
 
 
-getCity()
-changeBackground()
+getCity();
+changeBackground();

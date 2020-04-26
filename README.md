@@ -5,7 +5,7 @@ Link: https://webpatryk.github.io/Weather-in-Your-City/
 ## Describtion
 
 Weather application is for everyone who wants to keep up to date with the latest weather information. App shows weather in your region so it's very necessary to allow  access to your localization. You also have weather information for the following days. In this app you will know about temperature, pressure, rainfall and-or much more in your region. App is writed in vanilla javascript with RWD. \
-ENJOY!.                      
+ENJOY!                      
 
 
 ### Installation 

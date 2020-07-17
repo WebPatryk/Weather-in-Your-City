@@ -82,7 +82,7 @@ window.addEventListener('load', function () {
 				const actual3 = new Date(data.daily.data[2].time * 1000);
 				const actual4 = new Date(data.daily.data[3].time * 1000);
 
-				var day_arr = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota', 'Niedziela'];
+				var day_arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 				day1.textContent = day_arr[actual1.getDay()];
 				day2.textContent = day_arr[actual2.getDay()];
